@@ -1,0 +1,8 @@
+PWD /Users/mathsaey/Documents/Vub/Principes van objectgerichte programmeertalen/paper/verslag/content
+INPUT /usr/local/texlive/2012/texmf.cnf
+INPUT /usr/local/texlive/2012/texmf/web2c/texmf.cnf
+INPUT /usr/local/texlive/2012/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT titlepage.tex
+OUTPUT titlepage.log
+OUTPUT titlepage.pdf
+INPUT /usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map
