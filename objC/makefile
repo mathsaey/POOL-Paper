@@ -1,17 +1,18 @@
-COMPILER = g++
+COMPILER = gcc
 OUTPUT-DIR = bin/
-BINARY-NAME = main
 RUNTIME = -framework Foundation
 
 CLASSES = $(wildcard *.m)
-SOURCES = $(CLASSES:%.cpp=$(OUTPUT-DIR)%.o)
+SOURCES = $(CLASSES:%.m=$(OUTPUT-DIR)%.o)
+BINARIES = $(CLASSES:%.m=$(OUTPUT-DIR)%)
 
-main: $(SOURCES)
-	$(COMPILER) $(SOURCES) -o $(BINARY-NAME) $(RUNTIME)
-
+main: $(BINARIES)
+compile: $(SOURCES)
 clean: 
 	rm $(OUTPUT-DIR)*
-	rm $(main)
 
-$(OUTPUT-DIR)%.o : %.cpp
+$(OUTPUT-DIR)% : %.m
+	$(COMPILER) $< -o $@ $(RUNTIME)
+
+$(OUTPUT-DIR)%.o : %.m
 	$(COMPILER) -c $< -o $@

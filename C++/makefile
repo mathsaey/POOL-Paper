@@ -1,16 +1,17 @@
 COMPILER = g++
 OUTPUT-DIR = bin/
-BINARY-NAME = main
 
 CLASSES = $(wildcard *.cpp)
 SOURCES = $(CLASSES:%.cpp=$(OUTPUT-DIR)%.o)
+BINARIES = $(CLASSES:%.cpp=$(OUTPUT-DIR)%)
 
-main: $(SOURCES)
-	$(COMPILER) $(SOURCES) -o $(BINARY-NAME)
-
+main: $(BINARIES)
+compile: $(SOURCES)
 clean: 
 	rm $(OUTPUT-DIR)*
-	rm $(main)
+
+$(OUTPUT-DIR)% : %.cpp
+	$(COMPILER) $< -o $@
 
 $(OUTPUT-DIR)%.o : %.cpp
 	$(COMPILER) -c $< -o $@
