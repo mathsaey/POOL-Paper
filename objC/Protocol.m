@@ -7,20 +7,20 @@
 - (void) doNothing;
 @end
 
-@interface ImplementingClass : NSObject <Protocol> {}
+@interface Delegate : NSObject <Protocol> {}
 - (void) doSomething;
 @end
 
-@implementation ImplementingClass
+@implementation Delegate
 - (void) doSomething {
 	printf("Hello world! \n");
 }
 @end
 
 int main(int argc, char const *argv[]) {
-	ImplementingClass *c = [ImplementingClass alloc];
+	Delegate *d = [Delegate alloc];
 
-	[c doSomething];
-	//[c doNothing];
+	[d doSomething];
+	//[d doNothing];
 	return 0;
 }
