@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{article}
+
+\newcommand{\getTitle}{Principles of Object-Oriented Programming Languages: \\ Language Comparison}
+\newcommand{\getAuthor}{Mathijs Saey}
+\newcommand{\getFullAuthor}{Mathijs Saey, 94451,  \\ mathsaey@vub.ac.be, \\ 1st Master of Science in Applied Sciences and Engineering: \\ Computer Science}
+
+%Packages
+\usepackage{graphicx} 
+\usepackage{longtable}
+
+%Bibliography
+\usepackage[citestyle=authoryear]{biblatex}
+\addbibresource{references.bib}
+
+%Hyperref + pdf meta info
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+ 	pdfauthor={\getAuthor},
+ 	pdftitle={\getTitle},
+ 	pdfkeywords={VUB, Object-oriented, C++, Objective-C},
+ 	pdfproducer=pdfLatex,
+ 	pdfcreator=Sublime Text 2,
+}
+
+\begin{document}
+
+%Options
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+%Title + table of contents
+\input{content/titlepage}
+\tableofcontents
+\newpage
+
+%Content
+
+
+%Bibliography
+%\printbibliography[heading = bibnumbered]
+
+
+\end{document}
