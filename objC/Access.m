@@ -9,6 +9,7 @@
 	int c;
 }
 - (id) init;
+- (void) show;
 - (void) aVisibileMethod;
 @end
 
@@ -20,6 +21,12 @@
 		c = 3;
 	}
 	return self;
+}
+
+- (void) show {
+	printf("%d,", a);
+	printf("%d,", b);
+	printf("%d\n",c);
 }
 
 - (void) aVisibileMethod {printf("You can see me!\n");}
@@ -44,10 +51,16 @@
 int main() {
 	A *t = [[A alloc] init];
 
-	t->a = 1;
-	t->b = 2; 
+	t->a = 9;
+	t->b = 8;
+	t->c = 10; 
 	//Access.m:45: warning: instance variable ‘b’ is @protected; this will be a hard error in the future
 
+	id iVar;
+	object_getInstanceVariable(t, "c", &iVar);
+	printf("c is: %d\n", iVar);
+
+	[t show];
 	[t aVisibileMethod];
 	[t anInvisibleMethod];
 
