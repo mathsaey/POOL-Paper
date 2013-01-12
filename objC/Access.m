@@ -42,13 +42,12 @@
 @end
 
 int main() {
-	NSLog(@"init");
 	A *t = [[A alloc] init];
 
 	t->a = 1;
 	t->b = 2; 
 	//Access.m:45: warning: instance variable ‘b’ is @protected; this will be a hard error in the future
-	
+
 	[t aVisibileMethod];
 	[t anInvisibleMethod];
 
