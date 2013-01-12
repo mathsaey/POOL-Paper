@@ -1,4 +1,6 @@
 .DS_Store
+
+cpp-objc-en.pdf
 C++/bin/*
 ObjC/bin/*
 

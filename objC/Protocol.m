@@ -20,7 +20,7 @@
 int main(int argc, char const *argv[]) {
 	Delegate *d = [Delegate alloc];
 
-	[d doSomething];
+	[d doSomethingElse];
 	//[d doNothing];
 	return 0;
 }
