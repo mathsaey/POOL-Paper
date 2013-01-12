@@ -53,7 +53,7 @@ int main() {
 
 	t->a = 9;
 	t->b = 8;
-	t->c = 10; 
+	//t->c = 10; 
 	//Access.m:45: warning: instance variable ‘b’ is @protected; this will be a hard error in the future
 
 	id iVar;
