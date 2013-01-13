@@ -1,0 +1,40 @@
+%Packages
+\usepackage{color}
+\usepackage{graphicx} 
+\usepackage{listings}
+\usepackage{longtable}
+
+%Bibliography
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+%Hyperref + pdf meta info
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+ 	pdfauthor={\getAuthor},
+ 	pdftitle={\getTitle},
+ 	pdfkeywords={VUB, Object-oriented, C++, Objective-C},
+ 	pdfproducer=pdfLatex,
+ 	pdfcreator=Sublime Text 2,
+}
+
+%Extra colors
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.9,0.9,0.9}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% Listing settings
+\lstset{language=C++,
+	basicstyle=\scriptsize,
+	backgroundcolor=\color{gray},
+	commentstyle=\color{dkgreen},
+	numberstyle=\scriptsize\color{black},
+	keywordstyle=\color{blue},
+	morekeywords={@interface, @end, @protocol, @implementation, alloc, init, import},
+	numbers=left,
+	xleftmargin=9pt,
+	framexleftmargin=9pt,
+	breaklines=true,
+	numbersep=3pt,
+	tabsize=2}

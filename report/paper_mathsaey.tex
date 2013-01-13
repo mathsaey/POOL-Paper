@@ -1,27 +1,11 @@
-\documentclass[12pt, a4paper, twocolumn]{article}
+\documentclass[11pt, a4paper, twocolumn]{article}
 
-\newcommand{\getTitle}{Principles of Object-Oriented Programming Languages: \\ Language Comparison}
+\newcommand{\getTitle}{Principles of Object-Oriented Programming Languages: Language Comparison}
 \newcommand{\getAuthor}{Mathijs Saey}
+\newcommand{\getFullTitle}{Principles of Object-Oriented Programming Languages: \\ Language Comparison}
 \newcommand{\getFullAuthor}{Mathijs Saey, 94451,  \\ mathsaey@vub.ac.be, \\ 1st Master of Science in Applied Sciences and Engineering: \\ Computer Science}
 
-%Packages
-\usepackage{graphicx} 
-\usepackage{longtable}
-
-%Bibliography
-\usepackage[citestyle=authoryear]{biblatex}
-\addbibresource{references.bib}
-
-%Hyperref + pdf meta info
-\usepackage[hidelinks]{hyperref}
-
-\hypersetup{
- 	pdfauthor={\getAuthor},
- 	pdftitle={\getTitle},
- 	pdfkeywords={VUB, Object-oriented, C++, Objective-C},
- 	pdfproducer=pdfLatex,
- 	pdfcreator=Sublime Text 2,
-}
+\input{content/preamble}
 
 \begin{document}
 
@@ -33,12 +17,17 @@
 \input{content/titlepage}
 \tableofcontents
 \newpage
-
 %Content
+
+\section{Introduction}
+This paper is written for the Principles of Object Oriented Languages course at the VUB. The goal of this paper is to compare the object oriented properties of 2 languages. 
+
+Objective-C and C++ were chosen for this purpose, these languages are both strict supersets of C, but have a very different appraoch on object oriented features. C++ is focussed towards run-time efficieny and static type checking \cite{CPdesc}; while Objective-C tries to do things dynamically whenever this is possible \cite{OCRPG}.
+
+Both languages were compiled with 
 
 %Metaclasses
 %Everythingisanobject?       
-
 
 % Pure virtual classes vs protocols
 % Echte abstracte klases zijn er niet in obj-c. C++ heeft geen protocol alternatief
@@ -51,7 +40,8 @@
 %In Objective-C, all methods are virtual. Hence, the virtual keyword does not exist and has no equivalent.
 
 %Bibliography
-%\printbibliography[heading = bibnumbered]
+\printbibliography[heading = bibnumbered]
 
+\input{content/listings}
 
 \end{document}

@@ -4,17 +4,17 @@ cpp-objc-en.pdf
 C++/bin/*
 ObjC/bin/*
 
-verslag/paper_mathsaey-blx.bib
-verslag/paper_mathsaey.aux
-verslag/paper_mathsaey.bbl
-verslag/paper_mathsaey.blg
-verslag/paper_mathsaey.fdb_latexmk
-verslag/paper_mathsaey.fls
-verslag/paper_mathsaey.log
-verslag/paper_mathsaey.out
-verslag/paper_mathsaey.run.xml
-verslag/paper_mathsaey.synctex.gz
-verslag/paper_mathsaey.toc
+report/paper_mathsaey-blx.bib
+report/paper_mathsaey.aux
+report/paper_mathsaey.bbl
+report/paper_mathsaey.blg
+report/paper_mathsaey.fdb_latexmk
+report/paper_mathsaey.fls
+report/paper_mathsaey.log
+report/paper_mathsaey.out
+report/paper_mathsaey.run.xml
+report/paper_mathsaey.synctex.gz
+report/paper_mathsaey.toc
 
 
 ######################
