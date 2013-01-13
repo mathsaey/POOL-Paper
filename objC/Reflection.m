@@ -1,10 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-@interface A : NSObject {
-	int a;
-	int b;
-}
+@interface A : NSObject {}
 
 @end
 

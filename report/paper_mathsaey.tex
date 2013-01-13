@@ -97,9 +97,9 @@ The Objective-C language has no mandatory constructors or destructors. Construct
 \end{itemize}
 
 Note that nothing prevents an Objective-C programmer from creating his own alloc, init or dealloc that don't derive from NSObject directly or indirectly. For instance, a programmer that wants to implement the singleton pattern generally overrides alloc to ensure that an object is only created when he wants it.
-Initialisers generally derive from NSObject's init at some point (via a call to super init). Conventions dictate that initialisers start with init. Multiple initialisers are simply constructed by creating different methods, note that an initisialiser should return itself after instantiating the necessary instance variables.
+Initialisers generally derive from NSObject's init at some point (via a call to super init). Conventions dictate that initialisers start with init. Multiple initialisers are simply constructed by creating different methods, note that - unlike in C++, where a constructor has no return type or statement - an initisialiser should return itself after instantiating the necessary instance variables.
 
-\section{Lanaguage-Specific \\ Features}
+\section{Lanaguage-Specific \-Features}
 \subsection{Objective-C}
 \subsubsection{Protocols}
 \label{sec:protocol}
