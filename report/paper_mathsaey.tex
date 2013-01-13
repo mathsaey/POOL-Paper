@@ -1,9 +1,11 @@
-\documentclass[12pt, a4paper, twocolumn]{article}
+\documentclass[11pt, a4paper, twocolumn]{article}
 
 \newcommand{\getTitle}{Principles of Object-Oriented Programming Languages: Language Comparison}
 \newcommand{\getAuthor}{Mathijs Saey}
 \newcommand{\getFullTitle}{Principles of Object-Oriented Programming Languages: \\ Language Comparison}
 \newcommand{\getFullAuthor}{Mathijs Saey, 94451,  \\ mathsaey@vub.ac.be, \\ 1st Master of Science in Applied Sciences and Engineering: \\ Computer Science}
+
+\newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
 \input{content/preamble}
 
@@ -16,7 +18,6 @@
 %Title + table of contents
 \input{content/titlepage}
 \tableofcontents
-\newpage
 %Content
 
 \section{Introduction}
@@ -50,7 +51,7 @@ Objective-C and C++ both support \textit{public}, \textit{protected} and \textit
 
 It's also worth mentioning that Objective-C does allow you to access a protected variable outside of the class. The compiler generates a warning, but still allows you to do this. The following warning is shown: 
 \textit{"warning: instance variable ‘b’ is @protected; this will be a hard error in the future"}.
-Furthermore, the reflective features of Objective-C still allow a programmer to access private instance variables. This is because access modifiers are checked at compile time and not at runtime. Reflection is mentioned in greater detail in section \ref{sec:reflect}
+Furthermore, the reflective features of Objective-C still allow a programmer to access private instance variables. This is because access modifiers are checked at compile time and not at runtime. Reflection is mentioned in greater detail in section \ref{sec:reflection}
 
 \subsubsection{Methods}
 Member variables have the same access modifier structure in C++ and Objective C, this is not the case for methods. C++ uses the same conventions for all members, methods and variables all use the same private, protected, public access modifiers. This is not the case in Objective-C. 
@@ -84,6 +85,54 @@ A common multiple inheritance problem is the \textit{diamond problem}. This prob
 
 A C++ class does not inherit access rights in the same way that Objective-C does. The access right of the inherited class has to be explicitly mentioned. This access right then transfers to the members of that superclass. If the inherited class is declared public, then the access rights remain the same. If the inherited class is declared protected, then every public member of the superclass is protected in the subclass. If the inherited class is declared private, then every member of the superclass is private in the subclass.
 
+\subsection{Constructors and Destructors}
+\label{sec:constructor}
+C++ constructors are normal methods with no return type and the class name as their signature. Method overloading (see section \ref{sec:overloading}) allows the definition of multiple constructors. Destructors in C++ are declared in a similar way, however, a destructor cannot accept any arguments and is named "\textit{\mytilde{}Classname()}". A destructor will be automatically called right before deleting an object.
+
+The Objective-C language has no mandatory constructors or destructors. Constructing and deconstructing an object generally happens by overriding a few methods inherited from NSObject. These methods are listed here: 
+\begin{itemize}
+\item \textbf {alloc} Alloc allocates the space that the object needs.
+\item \textbf {init} Init inialises the necessary instance variables.
+\item \textbf {dealloc} Dealloc releases all the instance variables.
+\end{itemize}
+
+Note that nothing prevents an Objective-C programmer from creating his own alloc, init or dealloc that don't derive from NSObject directly or indirectly. For instance, a programmer that wants to implement the singleton pattern generally overrides alloc to ensure that an object is only created when he wants it.
+Initialisers generally derive from NSObject's init at some point (via a call to super init). Conventions dictate that initialisers start with init. Multiple initialisers are simply constructed by creating different methods, note that an initisialiser should return itself after instantiating the necessary instance variables.
+
+\section{Lanaguage-Specific \\ Features}
+\subsection{Objective-C}
+\subsubsection{Protocols}
+\label{sec:protocol}
+
+\subsubsection{Categories}
+\label{sec:categories}
+
+\subsubsection{Message Forwarding}
+\label{sec:message}
+
+\subsubsection{Reflection}
+\label{sec:reflection}
+
+\subsubsection{Metaclasses}
+\label{sec:meta}
+
+\subsection{C++}
+\subsubsection{Method Overloading}
+\label{sec:overloading}
+
+\subsubsection{Namespaces}
+\label{sec:namespaces}
+
+\subsubsection{Abstract Classes}
+\label{sec:abstract}
+
+\subsubsection{Friend Classes}
+\label{sec:friend}
+
+\subsubsection{Inner Classes}
+\label{sec:inner}
+
+\section{Conclusion}
 
 %Metaclasses
 %Everythingisanobject?       
@@ -103,7 +152,7 @@ A C++ class does not inherit access rights in the same way that Objective-C does
 %Bibliography
 \printbibliography[heading = bibnumbered]
 
-\section{Appendix}
+\section{Code Listings}
 \input{content/listings}
 
 \end{document}
