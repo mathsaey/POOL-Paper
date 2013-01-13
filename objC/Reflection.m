@@ -2,13 +2,11 @@
 #import <objc/runtime.h>
 
 @interface A : NSObject {}
-
 @end
 
 @implementation A
 - (void) doSomething {printf("Hello world!\n");}
 @end
-
 
 void newMethod(id _self,SEL _cmd) {
 	printf("It's really nice to add new methods at runtime! \n");
