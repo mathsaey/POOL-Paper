@@ -4,12 +4,11 @@ using namespace std;
 
 class A {
 public:
-	A():a(1),b(2),c(3),shared(4) {}
+	A():a(1),b(2),c(3) {}
 
 	int a;
 protected:
 	int b;
-	int shared;
 private:
 	int c;
 };
