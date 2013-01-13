@@ -21,7 +21,9 @@
 }
 @end
 
-@interface B: A {}
+@interface B: A {
+	//int a; => Inheritance.m:25: error: duplicate member ‘a’
+}
 - (void) checkLevels;
 @end
 

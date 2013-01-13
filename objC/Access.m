@@ -10,6 +10,7 @@
 }
 - (id) init;
 - (void) show;
+- (int) getC: (A*) obj;
 - (void) aVisibileMethod;
 @end
 
@@ -29,6 +30,7 @@
 	printf("%d\n",c);
 }
 
+- (int) getC: (A*) obj {return obj->c;}
 - (void) aVisibileMethod {printf("You can see me!\n");}
 - (void) anInvisibleMethod {printf("You can't see me!\n");}
 
@@ -43,26 +45,26 @@
 @implementation B
 - (void) getA {printf("%d", a);}
 - (void) getB {printf("%d", b);}
-//- (void) getC {printf("%d", c);} 
-//Access.m: In function ‘-[B getC]’: 
-//Access.m:33: error: instance variable ‘c’ is declared private
+//- (void) getC {printf("%d", c);}  => Access.m:33: error: instance variable ‘c’ is declared private
 @end
 
 int main() {
-	A *t = [[A alloc] init];
+	A *t1 = [[A alloc] init];
+	A *t2 = [[A alloc] init];
 
-	t->a = 9;
-	t->b = 8;
-	//t->c = 10; 
-	//Access.m:45: warning: instance variable ‘b’ is @protected; this will be a hard error in the future
+	[t1 getC:t2];
+
+	t1->a = 9;
+	t1->b = 8;
+	//t->c = 10; => Access.m:45: warning: instance variable ‘b’ is @protected; this will be a hard error in the future
 
 	id iVar;
-	object_getInstanceVariable(t, "c", &iVar);
+	object_getInstanceVariable(t1, "c", &iVar);
 	printf("c is: %d\n", iVar);
 
-	[t show];
-	[t aVisibileMethod];
-	[t anInvisibleMethod];
+	[t1 show];
+	[t1 aVisibileMethod];
+	[t1 anInvisibleMethod];
 
 	return 0;
 }
