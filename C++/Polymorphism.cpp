@@ -18,8 +18,7 @@ public:
 };
 
 void print(NoiseMaker* m) {
-	string s = m->makeNoise();
-	printf(s.c_str());
+	cout << m->makeNoise();
 }
 
 int main(int argc, char const *argv[]) {
