@@ -17,7 +17,7 @@
 @end
 
 int main(int argc, char const *argv[]) {
-	A *class = [A alloc];
-	[class doSomething];
+	A *obj = [[A alloc] init];
+	[obj doSomething];
 	return 0;
 }

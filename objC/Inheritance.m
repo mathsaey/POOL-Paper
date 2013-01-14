@@ -41,5 +41,3 @@ int main(int argc, char const *argv[]) {
 	b->b = 2;
 	return 0;
 }
-
-// Variabelen houden access level van superklasse over

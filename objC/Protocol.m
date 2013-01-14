@@ -8,19 +8,16 @@
 @end
 
 @interface Delegate : NSObject <Protocol> {}
-- (void) doSomething;
 @end
 
 @implementation Delegate
-- (void) doSomething {
-	printf("Hello world! \n");
-}
+- (void) doSomething {printf("Hello world! \n");}
 @end
 
 int main(int argc, char const *argv[]) {
-	Delegate *d = [Delegate alloc];
+	id<Protocol> d = [Delegate alloc];
 
-	[d doSomethingElse];
+	[d doSomething];
 	//[d doNothing];
 	return 0;
 }
