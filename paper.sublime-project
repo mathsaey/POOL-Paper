@@ -1,0 +1,35 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/mathsaey/Documents/Vub/Principes van objectgerichte programmeertalen/paper/objC",
+			"folder_exclude_patterns":["bin"],
+			"name":"Objective-C"
+		},
+		{
+			"path": "/Users/mathsaey/Documents/Vub/Principes van objectgerichte programmeertalen/paper/C++",
+			"folder_exclude_patterns":["bin"],
+			"name":"C++"
+		},
+		{
+			"path": "/Users/mathsaey/Documents/Vub/Principes van objectgerichte programmeertalen/paper/report",
+			"file_include_patterns":["*.tex","references.bib"],
+			"name":"report"
+
+		}
+	],
+
+	"build_systems":
+    [
+        {
+            "name": "Objective-C",
+            "selector": "source.objc",
+            "cmd": ["make"]
+        },
+        {
+            "name": "C++",
+            "selector": "source.c++",
+            "cmd": ["make"]
+        }
+    ]
+}

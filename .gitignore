@@ -4,6 +4,8 @@ ObjC/bin/*
 
 presentatie/*
 
+*.sublime-workspace
+
 report/paper_mathsaey-blx.bib
 report/paper_mathsaey.aux
 report/paper_mathsaey.bbl
