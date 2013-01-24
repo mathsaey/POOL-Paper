@@ -1,8 +1,8 @@
-.DS_Store
-
 cpp-objc-en.pdf
 C++/bin/*
 ObjC/bin/*
+
+presentatie/*
 
 report/paper_mathsaey-blx.bib
 report/paper_mathsaey.aux
